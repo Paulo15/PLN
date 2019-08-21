@@ -25,12 +25,17 @@ patterns = [
 if __name__ == "__main__":
     
     while True:
+        
         comment = input()
-        response = comment.lower()
-        for i,j in patterns:
-            responses = re.compile(patterns)
-            response = re.sub(i,j,response)
-        print(response.upper())
+        word_list = re.split("\s",comment)
+        
+        print(word_list)
+    """
+    for i,j in patterns:
+        responses = re.compile(patterns)
+        response = re.sub(i,j,response)
+        
+    print(response.upper())
         
     
 

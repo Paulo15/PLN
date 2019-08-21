@@ -15,8 +15,10 @@ Created on Tue Jul  9 20:08:54 2019
 import re
 
 patterns = [
-        (r'What.\are', "Select"),
-        (r"What \s is", "Select"),
+        (r'What', "Select"),
+        (r'Which', "Select"),
+        (r'Who', "Select"),
+        (r'How', "Select"),
         (r"sou","EU SOU"),
         ]
 

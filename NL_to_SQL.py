@@ -20,22 +20,25 @@ patterns = [
         (r"sou","EU SOU"),
         ]
 
+stopWords = ["the","is","are","that","this","those","these"]
 
 
 if __name__ == "__main__":
     
     while True:
-        
+        """TOKEN"""
         comment = input()
         word_list = re.split("\s",comment)
         
-        print(word_list)
-    """
-    for i,j in patterns:
-        responses = re.compile(patterns)
-        response = re.sub(i,j,response)
+        for i in word_list:
+            
+            if i in stopWords:
+                word_list.remove(i)
         
-    print(response.upper())
+        
+        
+        print(word_list)
+
         
     
 

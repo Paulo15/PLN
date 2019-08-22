@@ -14,15 +14,12 @@ Created on Tue Jul  9 20:08:54 2019
 
 import re
 
-patterns = [
-        (r'What', "Select"),
-        (r'Which', "Select"),
-        (r'Who', "Select"),
-        (r'How', "Select"),
-        (r"sou","EU SOU"),
-        ]
+patterns = {'what':"Select",'which':"Select",
+            'many':"Select count",'much':"Select count",
+            'who':"Select",'much':"Select count",
+            'number of':"Select count",'much':"Select count"}
 
-stopWords = ["the","is","are","that","this","those","these"]
+stopWords = ['the',"is","are","that","this","those","these","the","how"]
 
 
 if __name__ == "__main__":
@@ -30,16 +27,31 @@ if __name__ == "__main__":
     while True:
         """TOKEN"""
         comment = input()
+        comment.lower()
         word_list = re.split("\s",comment)
+        query=[]
         
         for i in word_list:
             
             if i in stopWords:
                 word_list.remove(i)
         
+        indice = 0
         
         
-        print(word_list)
+        t = len(patterns)
+        
+        for j in word_list:
+            for i in patterns:
+                if j == i:
+                    query.append(patterns[i])
+                    
+        print(query)
+                    
+               
+              
+                
+       
 
         
     

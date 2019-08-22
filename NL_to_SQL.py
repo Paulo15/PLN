@@ -16,10 +16,14 @@ import re
 
 patterns = {'what':"Select",'which':"Select",
             'many':"Select count",'much':"Select count",
-            'who':"Select",'much':"Select count",
-            'number of':"Select count",'much':"Select count"}
+            'who':"Select",
+            'number of':"count",
+            "students": "students from Student",
+            "student": "students from Student",
+            "elder": "max(age),",
+            "enrolled in": ""}
 
-stopWords = ['the',"is","are","that","this","those","these","the","how"]
+stopWords = ['the',"is","are","that","this","those","these","the","how","have"]
 
 
 if __name__ == "__main__":
@@ -46,7 +50,10 @@ if __name__ == "__main__":
                 if j == i:
                     query.append(patterns[i])
                     
-        print(query)
+        SQL = ""
+        for i in query:
+            SQL = SQL + " " + i
+        print(SQL)
                     
                
               
